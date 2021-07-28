@@ -116,7 +116,7 @@ EXTENSION_STATUS_VALUES = {
 
 r = runfiles.Create()
 
-EXTENSION_DB = utils.from_yaml(r.Rlocation("envoy/source/extensions/extensions_metadata.yaml"))
+EXTENSION_DB = utils.from_yaml(r.Rlocation("envoy/extensions_metadata.yaml"))
 
 # create an index of extension categories from extension db
 EXTENSION_CATEGORIES = {}
@@ -247,8 +247,8 @@ def format_extension(extension):
         categories = extension_metadata["categories"]
     except KeyError as e:
         sys.stderr.write(
-            f"\n\nDid you forget to add '{extension}' to source/extensions/extensions_build_config.bzl "
-            "or source/extensions/extensions_metadata.yaml?\n\n")
+            f"\n\nDid you forget to add '{extension}' to extensions_build_config.bzl "
+            "or extensions_metadata.yaml?\n\n")
         exit(1)  # Raising the error buries the above message in tracebacks.
 
     return EXTENSION_TEMPLATE.render(

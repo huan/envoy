@@ -6,7 +6,7 @@ load(
     "envoy_proto_library",
 )
 load(
-    "//source/extensions:all_extensions.bzl",
+    "//:all_extensions.bzl",
     "envoy_all_http_filters",
 )
 

@@ -26,8 +26,7 @@ envoy_repository_locations = load_module(
     'envoy_repository_locations', 'bazel/repository_locations.bzl')
 api_repository_locations = load_module(
     'api_repository_locations', 'api/bazel/repository_locations.bzl')
-extensions_build_config = load_module(
-    'extensions_build_config', 'source/extensions/extensions_build_config.bzl')
+extensions_build_config = load_module('extensions_build_config', 'extensions_build_config.bzl')
 
 REPOSITORY_LOCATIONS_SPEC = dict(envoy_repository_locations.REPOSITORY_LOCATIONS_SPEC)
 REPOSITORY_LOCATIONS_SPEC.update(api_repository_locations.REPOSITORY_LOCATIONS_SPEC)
@@ -150,7 +149,7 @@ class BuildGraph(object):
         """List all extensions.
 
     Returns:
-      Dictionary items from source/extensions/extensions_build_config.bzl.
+      Dictionary items from extensions_build_config.bzl.
     """
         return extensions_build_config.EXTENSIONS.items()
 

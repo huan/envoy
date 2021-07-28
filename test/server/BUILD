@@ -8,7 +8,7 @@ load(
     "envoy_package",
     "envoy_select_hot_restart",
 )
-load("//source/extensions:all_extensions.bzl", "envoy_all_extensions")
+load("//:all_extensions.bzl", "envoy_all_extensions")
 load("//bazel:repositories.bzl", "PPC_SKIP_TARGETS", "WINDOWS_SKIP_TARGETS")
 
 licenses(["notice"])  # Apache 2

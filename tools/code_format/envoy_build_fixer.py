@@ -75,7 +75,7 @@ def fix_package_and_license(path, contents):
     regex_to_use = PACKAGE_LOAD_BLOCK_REGEX
     package_string = 'envoy_package'
 
-    if 'source/extensions' in path:
+    if 'source/extensions' in path or ('contrib/' in path and not 'test/' in path):
         regex_to_use = EXTENSION_PACKAGE_LOAD_BLOCK_REGEX
         package_string = 'envoy_extension_package'
 

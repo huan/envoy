@@ -12,7 +12,7 @@ from typing import Iterator
 
 from tools.base import checker, utils
 
-BUILD_CONFIG_PATH = "source/extensions/extensions_build_config.bzl"
+BUILD_CONFIG_PATH = "extensions_build_config.bzl"
 
 BUILTIN_EXTENSIONS = (
     "envoy.request_id.uuid", "envoy.upstreams.tcp.generic", "envoy.transport_sockets.tls",
@@ -68,7 +68,7 @@ FILTER_NAMES_PATTERN = "NetworkFilterNames::get()"
 
 FUZZ_TEST_PATH = "test/extensions/filters/network/common/fuzz/uber_per_readfilter.cc"
 
-METADATA_PATH = "source/extensions/extensions_metadata.yaml"
+METADATA_PATH = "extensions_metadata.yaml"
 
 
 class ExtensionsChecker(checker.Checker):
@@ -83,7 +83,7 @@ class ExtensionsChecker(checker.Checker):
 
     @cached_property
     def configured_extensions(self) -> dict:
-        # source/extensions/extensions_build_config.bzl must have a
+        # extensions_build_config.bzl must have a
         # .bzl suffix for Starlark import, so we are forced to do this workaround.
         _extensions_build_config_spec = spec_from_loader(
             "extensions_build_config",

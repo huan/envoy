@@ -1,5 +1,3 @@
-#include "source/extensions/filters/http/squash/squash_filter.h"
-
 #include <memory>
 
 #include "envoy/extensions/filters/http/squash/v3/squash.pb.h"
@@ -14,6 +12,7 @@
 #include "source/common/json/json_loader.h"
 #include "source/common/protobuf/protobuf.h"
 #include "source/common/protobuf/utility.h"
+#include "source/extensions/filters/http/squash/squash_filter.h"
 
 #include "absl/container/fixed_array.h"
 

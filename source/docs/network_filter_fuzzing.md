@@ -8,7 +8,7 @@ Before adding the new filter into the fuzzers, please make sure the filter is de
 # Add a new ReadFilter into Generic Readfilter Fuzzer
 ## Step1. Make sure the filter can be linked into the fuzzer
 There are two ways to link it into the fuzzer.
-* [Recommended] In the file [extensions_build_config.bzl](https://github.com/envoyproxy/envoy/blob/main/source/extensions/extensions_build_config.bzl), the name of the filter should have a prefix `envoy.filters.network`. If it has such a prefix, the filter will be automatically linked into Generic ReadFilter Fuzzer.
+* [Recommended] In the file [extensions_build_config.bzl](https://github.com/envoyproxy/envoy/blob/main/extensions_build_config.bzl), the name of the filter should have a prefix `envoy.filters.network`. If it has such a prefix, the filter will be automatically linked into Generic ReadFilter Fuzzer.
 * [Not recommended]If for some reasons the filter's name doesn't have such a prefix, the config of the filter must be added into the `deps` field of `network_readfilter_fuzz_test` module in the file [BUILD](https://github.com/envoyproxy/envoy/blob/main/test/extensions/filters/network/common/fuzz/BUILD).
 ### Step2. Add the filter name into supported_filter_names
 In [uber_per_readfilter.cc](https://github.com/envoyproxy/envoy/blob/main/test/extensions/filters/network/common/fuzz/uber_per_readfilter.cc), add the filter name into the vector `supported_filter_names` in method `UberFilterFuzzer::filterNames()`.

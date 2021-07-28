@@ -103,7 +103,7 @@ EXTENSIONS = {
     "envoy.filters.http.rbac":                          "//source/extensions/filters/http/rbac:config",
     "envoy.filters.http.router":                        "//source/extensions/filters/http/router:config",
     "envoy.filters.http.set_metadata":                  "//source/extensions/filters/http/set_metadata:config",
-    "envoy.filters.http.squash":                        "//source/extensions/filters/http/squash:config",
+    #fixfix"envoy.filters.http.squash":                        "//source/extensions/filters/http/squash:config",
     "envoy.filters.http.tap":                           "//source/extensions/filters/http/tap:config",
     "envoy.filters.http.wasm":                          "//source/extensions/filters/http/wasm:config",
 
